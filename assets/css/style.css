@@ -1,0 +1,19 @@
+body {
+	box-sizing: border-box;
+	background-image: url("../images/weather.png");
+}
+
+
+.box {
+	text-align: center;
+	/*creating gab at top of page*/
+	margin-top: 2%;
+	border: 3px darkblue !important;
+
+}
+
+.input-group {
+	width: 100%;
+	margin-bottom: 2%;
+}
+
