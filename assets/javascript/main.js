@@ -22,7 +22,7 @@ $("#submit").on("click", function(event){
 function getData() {
 trainName = $("#trainName").val().trim();
 destination = $("#destination").val().trim();
-firstTrain = $("#firstTrain").val().trim();
+firstTrain = moment($("#firstTrain").val().trim(), "LT").format("X");
 frequency = $("#frequency").val().trim();
 
 // Pushing info to database
@@ -48,14 +48,18 @@ database.ref().on("child_added", function(snapshot){
 var train = snapshot.val().trainName;
 var dest = snapshot.val().destination;
 var fTrain = snapshot.val().firstTrain;
-var freq = snapshot.val().frequency;
+var freq = parseInt(snapshot.val().frequency);
+var m = Math.ceil(parseInt(moment().diff(moment.unix(fTrain, "X"), 'minutes'))/freq);
+console.log(m);
+var nextA = moment.unix(fTrain, "X").add(m*freq, "minutes");
+var nextAr= moment(nextA).format("LT");
+console.log(nextAr);
+var minAway = moment(nextA).diff(moment(), "minutes")+1;
+console.log(minAway);
 
-console.log(train);
-console.log(dest);
-console.log(fTrain);
-console.log(freq);
 
-$("#trainTable > tbody").append("<tr><td>" + train + "</td><td>" + dest + "</td><td>" + freq + "</td><td>" + "nextA" + "</td><td>" + "minAway" + "</td></tr>");
+
+$("#trainTable > tbody").append("<tr><td>" + train + "</td><td>" + dest + "</td><td>" + freq + "</td><td>" + nextAr + "</td><td>" + minAway + "</td></tr>");
 
 });
 
