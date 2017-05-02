@@ -1,1 +1,3 @@
-# week-7-game
+# Train Scheduler
+
+Train Scheduler App that incorportates Firebase to host arrival and departure data. Moment.JS used to manipulate times. 
