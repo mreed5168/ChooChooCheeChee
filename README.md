@@ -1,7 +1,5 @@
 # Train Scheduler
 
-## Video of app in action
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/DOed5IoILJI/0.jpg)](http://www.youtube.com/watch?v=DOed5IoILJI "ChooChooCheeChee")
-
+## [Link to Deployed Web App](https://mreed5168.github.io/GifTastic/ "ChooChooCheeChee")
 
 Train Scheduler App that incorportates Firebase to host arrival and departure data. Moment.JS used to manipulate times. 
