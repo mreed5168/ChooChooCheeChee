@@ -65,7 +65,7 @@ $("#trainTable > tbody").append("<tr><td>" + train + "</td><td>" + dest + "</td>
 
 
 if (screen.width <= 480) {
- document.getElementById("viewport").setAttribute("content", "width=450; initial-scale=0.5");
+ document.getElementById("viewport").setAttribute("content", "width=400; initial-scale=0.5");
 }
 
 
