@@ -50,12 +50,10 @@ var dest = snapshot.val().destination;
 var fTrain = snapshot.val().firstTrain;
 var freq = parseInt(snapshot.val().frequency);
 var m = Math.ceil(parseInt(moment().diff(moment.unix(fTrain, "X"), 'minutes'))/freq);
-console.log(m);
 var nextA = moment.unix(fTrain, "X").add(m*freq, "minutes");
 var nextAr= moment(nextA).format("LT");
-console.log(nextAr);
 var minAway = moment(nextA).diff(moment(), "minutes")+1;
-console.log(minAway);
+
 
 
 
